@@ -1,0 +1,18 @@
+<h1>{{ title() }}</h1>
+
+<!-- Input + bouton pour ajouter -->
+<div>
+    <input #taskInput placeholder="Nouvelle tâche..." />
+    <button (click)="addTask(taskInput.value); taskInput.value=''">Ajouter</button>
+</div>
+
+<!-- Liste des tâches -->
+@for (t of tasks; track t.id) {
+    <app-task
+        [taskTitle]="t.title"
+        [isDone]="t.done"
+        (doneChange)="t.done = $event"
+        (deleted)="deleteTask(t.id)"> 
+    </app-task>
+
+}
