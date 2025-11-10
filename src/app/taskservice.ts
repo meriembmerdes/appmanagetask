@@ -15,4 +15,8 @@ getTasks() {
 addTask(title: string) {
   this.tasks.push({id: Date.now(), title, done: false });
 }
+removeTask(ind:number){
+this.tasks.splice(ind,1)
+}
+
 }

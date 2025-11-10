@@ -10,10 +10,10 @@ import { Taskservice } from './taskservice';
 // }
 @Component({
   selector: 'app-root',
-   standalone: true, // ✅
+  standalone: true,
   imports: [RouterOutlet, Task],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'] //pluriel
+  styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('todolist');
@@ -29,6 +29,15 @@ constructor(private Taskservice: Taskservice) {}
 ngOnInit() {
 this.tasks = this.Taskservice.getTasks();
 }
+addNewTask(){
+
+    this.Taskservice.addTask("new task service")
+
+  }
+
+  removeTask(id:number){
+  this.Taskservice.removeTask(id)
+  }
 }
 //   // Add new task
 //   addTask(title: string) {
