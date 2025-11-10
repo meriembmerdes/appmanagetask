@@ -2,7 +2,6 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Task } from "./task/task";
 import { Taskservice } from './taskservice';
-import { LowerCasePipe, TitleCasePipe, UpperCasePipe ,DatePipe ,CurrencyPipe,PercentPipe,DecimalPipe} from '@angular/common';
 
 // interface TaskModel {
 //   id: number;
@@ -12,7 +11,7 @@ import { LowerCasePipe, TitleCasePipe, UpperCasePipe ,DatePipe ,CurrencyPipe,Per
 @Component({
   selector: 'app-root',
    standalone: true, // ✅
-  imports: [RouterOutlet, Task ,UpperCasePipe,LowerCasePipe,TitleCasePipe,DatePipe,CurrencyPipe,PercentPipe,DecimalPipe],
+  imports: [RouterOutlet, Task],
   templateUrl: './app.html',
   styleUrls: ['./app.css'] //pluriel
 })
