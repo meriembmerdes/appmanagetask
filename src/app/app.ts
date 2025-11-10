@@ -4,11 +4,11 @@ import { Task } from "./task/task";
 import { Taskservice } from './taskservice';
 import { LowerCasePipe, TitleCasePipe, UpperCasePipe ,DatePipe ,CurrencyPipe,PercentPipe,DecimalPipe} from '@angular/common';
 
-interface TaskModel {
-  id: number;
-  title: string;
-  done: boolean;
-}
+// interface TaskModel {
+//   id: number;
+//   title: string;
+//   done: boolean;
+// }
 @Component({
   selector: 'app-root',
    standalone: true, // ✅
@@ -19,32 +19,30 @@ interface TaskModel {
 export class App {
   protected readonly title = signal('todolist');
 
-today = new Date();
+// today = new Date();
 
-price = 1234.56;
-percentage = 0.259;
+// price = 1234.56;
+// percentage = 0.259;
 
-  tasks: TaskModel[]  = [
-{ id : 1 , title: 'Learn Angular', done: false },
-{id : 2 , title: 'Build ToDoList App', done: false },
-{id : 3 , title: 'Celebrate!', done: true }
-];
+tasks: any[] = [];
+
 constructor(private Taskservice: Taskservice) {}
 ngOnInit() {
 this.tasks = this.Taskservice.getTasks();
 }
-  // Add new task
-  addTask(title: string) {
-    if (!title.trim()) return;
-    this.tasks.push({
-      id: Date.now(),
-      title,
-      done: false
-    });
-  }
-
-  // Delete task
-  deleteTask(id: number) {
-    this.tasks = this.tasks.filter(t => t.id !== id);
-  }
 }
+//   // Add new task
+//   addTask(title: string) {
+//     if (!title.trim()) return;
+//     this.tasks.push({
+//       id: Date.now(),
+//       title,
+//       done: false
+//     });
+//   }
+
+//   // Delete task
+//   deleteTask(id: number) {
+//     this.tasks = this.tasks.filter(t => t.id !== id);
+//   }
+// }

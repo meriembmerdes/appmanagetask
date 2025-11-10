@@ -1,32 +1,20 @@
 
 <h1>{{ title() }}</h1>
+<hr>
+<nav>
+<a routerLink="/">Home</a> |
+<a routerLink="/about">About</a>
+</nav>
+<router-outlet></router-outlet>
 
-<!-- Input + bouton pour ajouter -->
-<div>
-    <input #taskInput placeholder="Nouvelle tâche..." />
-    <button (click)="addTask(taskInput.value); taskInput.value=''">Ajouter</button>
-</div>
-<!-- Liste des tâches -->
+<h2>Tasks from Service</h2>
+
 @for (t of tasks; track t.id) {
-    <app-task
-        [taskTitle]="t.title"
-        [isDone]="t.done"
-        (doneChange)="t.done = $event"
-        (deleted)="deleteTask(t.id)"> 
+    <app-task 
+        [taskTitle]="t.title" 
+        [isDone]="t.done">
     </app-task>
-
 }
-<p>Original: {{ 'hello angular' }}</p>
-<p>Uppercase: {{ 'hello angular' | uppercase }}</p>
-<p>Lowercase: {{ 'HELLO ANGULAR' | lowercase }}</p>
-<p>Titlecase: {{ 'learn angular framework' | titlecase }}</p><br>
-<!--format date-->
-<p>Default: {{ today }}</p>
-<p>Short Date: {{ today | date:'shortDate' }}</p>
-<p>Full Date: {{ today | date:'fullDate' }}</p>
-<p>Custom Format: {{ today | date:'dd/MM/yyyy HH:mm' }}</p><br>
-<!--format numbers-->
-<p>Price (default): {{ price }}</p>
-<p>Price (2 decimals): {{ price | number:'1.2-2' }}</p>
-<p>Currency: {{ price | currency:'USD' }}</p>
-<p>Percentage: {{ percentage | percent }}</p><br>
+
+<hr>
+

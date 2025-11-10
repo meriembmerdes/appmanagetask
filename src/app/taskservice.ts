@@ -5,14 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class Taskservice {
   private tasks = [
-    { title: 'Learn Angular', done: false },
-    { title: 'Build ToDoList App', done: false },
-    { title: 'Celebrate!', done: true }
+    {id : 1, title: 'Learn Angular', done: false },
+    {id : 2, title: 'Build ToDoList App', done: false },
+    {id : 3,title: 'Celebrate!', done: true }
 ];
 getTasks() {
   return this.tasks;
 }
 addTask(title: string) {
-  this.tasks.push({ title, done: false });
+  this.tasks.push({id: Date.now(), title, done: false });
 }
 }
