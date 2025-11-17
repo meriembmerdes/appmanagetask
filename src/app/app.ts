@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet,RouterLink } from '@angular/router';
 import { Task } from "./task/task";
 import { Taskservice } from './taskservice';
 
@@ -11,7 +11,7 @@ import { Taskservice } from './taskservice';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Task],
+  imports: [RouterOutlet, RouterLink,Task],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
