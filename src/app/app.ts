@@ -16,7 +16,7 @@ import { Taskservice } from './taskservice';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('todolist');
+  protected readonly title = signal('📋todolist✌️');
 
 // today = new Date();
 
